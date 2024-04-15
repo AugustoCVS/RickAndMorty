@@ -8,6 +8,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid $border;
 }
 
 .toggle-container {
@@ -52,6 +53,11 @@
   background-color: $black;
   cursor: pointer;
 }
+
+.toggle + .toggle {
+  border-left: 1px solid $border;
+}
+
 
 .badge {
   background-color: $white;
