@@ -1,0 +1,15 @@
+@import "../../../../color.verbals.scss";
+
+.input-form{
+  width: 19.875rem;
+  height: 3rem;
+  border: 1px solid $border;
+  padding: 12px;
+  color: $primary_text;
+  background-color: transparent;
+  border-radius: 12px;
+
+  &:focus{
+    outline: none;
+  }
+}

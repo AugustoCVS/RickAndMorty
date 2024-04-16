@@ -1,0 +1,24 @@
+<section class="home-container">
+  <div class="search-section">
+    <app-title></app-title>
+
+    <app-input placeholder="Pesquisar" [searchControl]="search"></app-input>
+  </div>
+
+  <div class="not-found-section">
+    <app-not-found
+      *ngIf="characterList.length === 0"
+      title="Nada foi encontrado"
+      description="Tente realizar uma nova busca"
+    ></app-not-found>
+  </div>
+
+  <div class="character-section">
+    <app-card
+      *ngFor="let character of characterList; let i = index"
+      imgSrc="{{ character.image }}"
+      name="{{ character.name }}"
+      species="{{ character.species }}"
+    ></app-card>
+  </div>
+</section>

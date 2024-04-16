@@ -1,7 +1,23 @@
 @import "https://fonts.googleapis.com/css2?family=Creepster&family=Poppins:wght@400;600;700&family=Roboto:wght@400;700;900&display=swap";
+@import "./color.verbals.scss";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+::-webkit-scrollbar {
+  width: 8px; 
+}
+
+::-webkit-scrollbar-track {
+  background: $core-background; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: $border; 
+  border-radius: 12px;
+}
+
+

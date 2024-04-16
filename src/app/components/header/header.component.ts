@@ -1,5 +1,5 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core'
+import { Component, EventEmitter, Input, Output } from '@angular/core'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faHeart, faHouse } from '@fortawesome/free-solid-svg-icons';
 
@@ -12,6 +12,7 @@ import { faHeart, faHouse } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent {
   @Output() screenChange = new EventEmitter<string>();
+  @Input() badgeNumber: number = 0;
 
   faHeart = faHeart;
   faHouse = faHouse;
