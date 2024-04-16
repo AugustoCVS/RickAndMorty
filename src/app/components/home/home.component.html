@@ -12,4 +12,13 @@
       description="Tente realizar uma nova busca"
     ></app-not-found>
   </div>
+
+  <div class="character-section">
+    <app-card
+      *ngFor="let character of characterList; let i = index"
+      imgSrc="{{ character.image }}"
+      name="{{ character.name }}"
+      species="{{ character.species }}"
+    ></app-card>
+  </div>
 </section>
