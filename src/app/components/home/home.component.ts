@@ -11,12 +11,20 @@ import {
   distinctUntilChanged,
   switchMap,
 } from 'rxjs/operators';
-import { NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
+import { CardComponent } from '../common/card/card.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [TitleComponent, InputComponent, NotFoundComponent, NgIf],
+  imports: [
+    TitleComponent,
+    InputComponent,
+    NotFoundComponent,
+    NgIf,
+    CardComponent,
+    NgFor,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
