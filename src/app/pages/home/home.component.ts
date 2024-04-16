@@ -1,6 +1,6 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { CharacterService } from '../../services/character.service';
+
 import { ICharacter } from '../../@types/character.interface';
 import { TitleComponent } from '../../components/common/title/title.component';
 import { NotFoundComponent } from '../../components/common/not-found/not-found.component';
@@ -13,6 +13,7 @@ import {
 } from 'rxjs/operators';
 import { NgFor, NgIf } from '@angular/common';
 import { CardComponent } from '../../components/common/card/card.component';
+import { CharacterService } from '../../core/services/Character/character.service';
 
 @Component({
   selector: 'app-home',
