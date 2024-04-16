@@ -1,23 +1,15 @@
 <section class="home-container">
   <div class="search-section">
     <app-title></app-title>
-    <app-input
-      placeholder="Pesquisar"
-      (searchValue)="
-        handleSearch({
-          value: $event
-        })
-      "
-    ></app-input>
+
+    <app-input placeholder="Pesquisar" [searchControl]="search"></app-input>
   </div>
 
   <div class="not-found-section">
-    @if(characterList.length !== 0) {
     <app-not-found
+      *ngIf="characterList.length === 0"
       title="Nada foi encontrado"
       description="Tente realizar uma nova busca"
-    >
-    </app-not-found>
-    }
+    ></app-not-found>
   </div>
 </section>
