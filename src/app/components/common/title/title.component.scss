@@ -1,0 +1,13 @@
+@import "../../../../color.verbals.scss";
+
+.title {
+  font-family: 'Creepster';
+  color: $text_color;
+  font-weight: 400;
+  font-size: 3rem;
+  text-shadow: 
+    -1px -1px 0 $outline_text_color,  
+    1px -1px 0 $outline_text_color,
+    -1px 1px 0 $outline_text_color,
+    1px 1px 0 $outline_text_color; 
+}
