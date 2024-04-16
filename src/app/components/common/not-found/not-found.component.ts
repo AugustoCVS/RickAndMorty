@@ -1,20 +1,17 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { NgIf } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-not-found',
   standalone: true,
-  imports: [],
+  imports: [NgIf, RouterLink, RouterLinkActive],
   templateUrl: './not-found.component.html',
-  styleUrl: './not-found.component.scss'
+  styleUrl: './not-found.component.scss',
 })
 export class NotFoundComponent {
-  @Input() title: string = "";
-  @Input() description: string = "";
+  @Input() title: string = '';
+  @Input() description: string = '';
   @Input() shouldShowButton: boolean = false;
-
-  @Output() buttonClick = new EventEmitter<void>();
-
-  onButtonClick() {
-    this.buttonClick.emit();
-  }
+  @Input() buttonText: string = '';
 }

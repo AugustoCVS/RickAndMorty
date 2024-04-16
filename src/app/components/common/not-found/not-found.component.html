@@ -1,7 +1,7 @@
 <div class="not-found-container">
   <h2>{{ title }}</h2>
   <p>{{ description }}</p>
-  @if (shouldShowButton) {
-    <button (click)="onButtonClick()">Voltar ao início</button>
-  }
+  <button *ngIf="shouldShowButton" routerLink="">
+    {{ buttonText }}
+  </button>
 </div>
