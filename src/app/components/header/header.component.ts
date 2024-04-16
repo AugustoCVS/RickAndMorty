@@ -1,17 +1,23 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core'
+import { Component, Input } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faHeart, faHouse } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgOptimizedImage, CommonModule, FontAwesomeModule],
+  imports: [
+    NgOptimizedImage,
+    CommonModule,
+    FontAwesomeModule,
+    RouterLinkActive,
+    RouterLink,
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  @Output() screenChange = new EventEmitter<string>();
   @Input() badgeNumber: number = 0;
 
   faHeart = faHeart;
@@ -20,6 +26,5 @@ export class HeaderComponent {
 
   handleScreenChange(screen: string): void {
     this.currentScreen = screen;
-    this.screenChange.emit(screen);
   }
 }

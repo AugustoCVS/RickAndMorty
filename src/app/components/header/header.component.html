@@ -6,6 +6,7 @@
       class="toggle"
       [ngClass]="{ active: currentScreen === 'inicio' }"
       (click)="handleScreenChange('inicio')"
+      routerLink=""
     >
       <fa-icon [icon]="faHouse" class="toggle-icon"></fa-icon>
       <p class="toggle-text">Início</p>
@@ -15,6 +16,7 @@
       class="toggle"
       [ngClass]="{ active: currentScreen === 'favoritos' }"
       (click)="handleScreenChange('favoritos')"
+      routerLink="/favoritos"
     >
       <fa-icon [icon]="faHeart" class="toggle-icon"></fa-icon>
       <p class="toggle-text">Favoritos</p>
