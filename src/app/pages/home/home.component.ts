@@ -2,9 +2,9 @@ import { Component, OnInit, signal } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { CharacterService } from '../../services/character.service';
 import { ICharacter } from '../../@types/character.interface';
-import { TitleComponent } from '../common/title/title.component';
-import { NotFoundComponent } from '../common/not-found/not-found.component';
-import { InputComponent } from '../common/input/input.component';
+import { TitleComponent } from '../../components/common/title/title.component';
+import { NotFoundComponent } from '../../components/common/not-found/not-found.component';
+import { InputComponent } from '../../components/common/input/input.component';
 import {
   catchError,
   debounceTime,
@@ -12,7 +12,7 @@ import {
   switchMap,
 } from 'rxjs/operators';
 import { NgFor, NgIf } from '@angular/common';
-import { CardComponent } from '../common/card/card.component';
+import { CardComponent } from '../../components/common/card/card.component';
 
 @Component({
   selector: 'app-home',
