@@ -27,6 +27,10 @@
   color: $primary_text;
 }
 
+.favorite-icon.active{
+  color: $black;
+}
+
 .description {
   display: flex;
   width: 100%;
