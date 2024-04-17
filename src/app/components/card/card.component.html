@@ -1,6 +1,6 @@
 <div class="card-container">
   <fa-icon
-    [icon]="handleTheIconBasedOnFavorite()"
+    [icon]="renderTheIconBasedOnFavorite()"
     [ngClass]="{ active: character.favorite === true}"
     class="favorite-icon"
     (click)="toggleFavorite()"
