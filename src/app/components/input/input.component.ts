@@ -10,5 +10,6 @@ import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class InputComponent {
   @Input() placeholder: string = '';
-  @Input() searchControl: FormControl = new FormControl();
+  @Input() searchControl: FormControl = new FormControl('');
+  @Input() type: string = 'text';
 }
