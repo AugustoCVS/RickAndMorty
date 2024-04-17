@@ -7,10 +7,12 @@
   background-color: $black;
   display: flex;
   align-items: center;
+  text-align: center;
   justify-content: center;
   flex-direction: column;
   font-family: "Poppins";
   gap: 1.5rem;
+  padding: 0 0.5rem;
 
   max-width: 45rem;
   max-height: 32rem;
