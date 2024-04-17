@@ -16,11 +16,7 @@
   <div class="character-section">
     <app-card
       *ngFor="let character of characterList; let i = index"
-      imgSrc="{{ character.image }}"
-      name="{{ character.name }}"
-      species="{{ character.species }}"
-      type="{{ character.type }}"
-      [isFavorite]="character.favorite"
+      [character]="character"
     ></app-card>
   </div>
 </section>

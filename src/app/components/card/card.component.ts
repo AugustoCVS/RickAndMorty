@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
+import { ICharacter } from '../../@types/character.interface';
 
 @Component({
   selector: 'app-card',
@@ -12,12 +13,8 @@ import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
   styleUrl: './card.component.scss',
 })
 export class CardComponent {
-  @Input() imgSrc: string = '';
-  @Input() name: string = '';
-  @Input() species: string = '';
-  @Input() type: string = '';
   @Input() loading: boolean = false;
-  @Input() isFavorite: boolean | undefined = false;
+  @Input() character!: ICharacter;
 
   isExpanded: boolean = false;
 
@@ -29,10 +26,10 @@ export class CardComponent {
   }
 
   toggleFavorite(): void {
-    this.isFavorite = !this.isFavorite;
+    this.character.favorite = ! this.character.favorite;
   }
 
   handleTheIconBasedOnFavorite(): any {
-    return this.isFavorite ? this.solidHeart : this.emptyHeart;
+    return  this.character.favorite ? this.solidHeart : this.emptyHeart;
   }
 }

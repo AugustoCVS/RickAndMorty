@@ -15,10 +15,8 @@
 
   <div class="character-section">
     <app-card
-      *ngFor="let favoritesCharacters of favoritesCharacters; let i = index"
-      imgSrc="{{ favoritesCharacters.image }}"
-      name="{{ favoritesCharacters.name }}"
-      species="{{ favoritesCharacters.species }}"
+      *ngFor="let character of favoritesCharacters; let i = index"
+      [character]="character"
     ></app-card>
   </div>
 </section>
