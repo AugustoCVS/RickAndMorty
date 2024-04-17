@@ -15,8 +15,15 @@ export class CardComponent {
   @Input() imgSrc: string = '';
   @Input() name: string = '';
   @Input() species: string = '';
+  @Input() type: string = '';
   @Input() loading: boolean = false;
+
+  isExpanded: boolean = false;
 
   solidHeart = solidHeart;
   emptyHeart = regularHeart;
+
+  toggleNumberOfLines(): void {
+    this.isExpanded = !this.isExpanded;
+  }
 }

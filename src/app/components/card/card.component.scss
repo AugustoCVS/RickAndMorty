@@ -1,6 +1,6 @@
 @import "../../../color.verbals.scss";
 
-.card-container{
+.card-container {
   position: relative;
   width: 100%;
   height: 100%;
@@ -11,7 +11,7 @@
   overflow: hidden;
   border: 1px solid $border;
 
-  .character-img{
+  .character-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -19,7 +19,7 @@
   }
 }
 
-.favorite-icon{
+.favorite-icon {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
@@ -27,7 +27,7 @@
   color: $primary_text;
 }
 
-.description{
+.description {
   display: flex;
   width: 100%;
   height: 100%;
@@ -38,17 +38,26 @@
   background-color: $black;
 
   h3 {
-    font-family: 'Creepster';
+    font-family: "Creepster";
     color: $primary_text;
     font-weight: 400;
     font-size: 1.5rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+
+    cursor: pointer;
+  }
+
+  h3.expanded {
+    -webkit-line-clamp: 10;
   }
 
   p {
-    font-family: 'Poppins';
+    font-family: "Poppins";
     color: $secondary_text;
     font-weight: 400;
     font-size: 1rem;
   }
 }
-
