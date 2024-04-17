@@ -1,10 +1,17 @@
 <div class="card-container">
-  <fa-icon [icon]="emptyHeart" class="favorite-icon"></fa-icon>
+  <fa-icon
+    [icon]="handleTheIconBasedOnFavorite()"
+    [ngClass]="{ active: this.isFavorite === true}"
+    class="favorite-icon"
+    (click)="toggleFavorite()"
+  ></fa-icon>
 
   <img ngSrc="{{ imgSrc }}" width="224" height="224" class="character-img" />
   <div class="description">
-    <h3 [class.expanded]="isExpanded" (click)="toggleNumberOfLines()">{{ name }}</h3>
+    <h3 [class.expanded]="isExpanded" (click)="toggleNumberOfLines()">
+      {{ name }}
+    </h3>
     <p>{{ species }}</p>
-    <p >{{ type }}</p>
+    <p>{{ type }}</p>
   </div>
 </div>
