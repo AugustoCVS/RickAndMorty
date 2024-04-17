@@ -19,7 +19,7 @@ export class CharacterService {
   getCharacterByName({
     name,
   }: {
-    name: string | null;
+    name: string;
   }): Observable<IGetCharacterResponse> {
     return this.http.get<IGetCharacterResponse>(
       `${this.API_URL}/?name=${name}`
