@@ -1,10 +1,5 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { FormControl } from '@angular/forms';
-
-import { ICharacter } from '../../@types/character.interface';
-import { TitleComponent } from '../../components/common/title/title.component';
-import { NotFoundComponent } from '../../components/common/not-found/not-found.component';
-import { InputComponent } from '../../components/common/input/input.component';
 import {
   catchError,
   debounceTime,
@@ -12,8 +7,13 @@ import {
   switchMap,
 } from 'rxjs/operators';
 import { NgFor, NgIf } from '@angular/common';
-import { CardComponent } from '../../components/common/card/card.component';
+
+import { ICharacter } from '../../@types/character.interface';
 import { CharacterService } from '../../core/services/Character/character.service';
+import { CardComponent } from '../../components/card/card.component';
+import { InputComponent } from '../../components/input/input.component';
+import { NotFoundComponent } from '../../components/not-found/not-found.component';
+import { TitleComponent } from '../../components/title/title.component';
 
 @Component({
   selector: 'app-home',
@@ -22,8 +22,8 @@ import { CharacterService } from '../../core/services/Character/character.servic
     TitleComponent,
     InputComponent,
     NotFoundComponent,
-    NgIf,
     CardComponent,
+    NgIf,
     NgFor,
   ],
   templateUrl: './home.component.html',

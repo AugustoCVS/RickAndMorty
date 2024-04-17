@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ICharacter } from '../../@types/character.interface';
-import { TitleComponent } from '../../components/common/title/title.component';
-import { NotFoundComponent } from '../../components/common/not-found/not-found.component';
-import { CardComponent } from '../../components/common/card/card.component';
+import { CardComponent } from '../../components/card/card.component';
+import { NotFoundComponent } from '../../components/not-found/not-found.component';
+import { TitleComponent } from '../../components/title/title.component';
 import { NgForOf, NgIf } from '@angular/common';
 
 @Component({
