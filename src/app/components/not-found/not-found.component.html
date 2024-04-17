@@ -1,7 +1,7 @@
 <div class="not-found-container">
   <h2>{{ title }}</h2>
   <p>{{ description }}</p>
-  <button *ngIf="shouldShowButton" routerLink="">
+  <button *ngIf="shouldShowButton" (click)="this.navigate.handleNavigate({ screen: '/' });">
     {{ buttonText }}
   </button>
 </div>
