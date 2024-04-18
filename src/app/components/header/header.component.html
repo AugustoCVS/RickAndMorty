@@ -4,8 +4,10 @@
   <div class="toggle-container">
     <div
       class="toggle"
-      [ngClass]="{ active: currentScreen === 'inicio' }"
-      (click)="handleScreenChange('inicio')"
+      [ngClass]="{ active: this.navigate.currentScreen === '/' }"
+      (click)="this.navigate.handleNavigate({
+        screen: '/',
+      })"
     >
       <fa-icon [icon]="faHouse" class="toggle-icon"></fa-icon>
       <p class="toggle-text">Início</p>
@@ -13,8 +15,10 @@
 
     <div
       class="toggle"
-      [ngClass]="{ active: currentScreen === 'favoritos' }"
-      (click)="handleScreenChange('favoritos')"
+      [ngClass]="{ active: this.navigate.currentScreen === '/favoritos' }"
+      (click)="this.navigate.handleNavigate({
+        screen: '/favoritos',
+      })"
     >
       <fa-icon [icon]="faHeart" class="toggle-icon"></fa-icon>
       <p class="toggle-text">Favoritos</p>

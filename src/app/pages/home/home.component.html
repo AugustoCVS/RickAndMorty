@@ -2,7 +2,7 @@
   <div class="search-section">
     <app-title></app-title>
 
-    <app-input placeholder="Pesquisar" [searchControl]="search"></app-input>
+    <app-input placeholder="Pesquisar" [searchControl]="search" type="text"></app-input>
   </div>
 
   <div class="not-found-section">
@@ -16,9 +16,7 @@
   <div class="character-section">
     <app-card
       *ngFor="let character of characterList; let i = index"
-      imgSrc="{{ character.image }}"
-      name="{{ character.name }}"
-      species="{{ character.species }}"
+      [character]="character"
     ></app-card>
   </div>
 </section>

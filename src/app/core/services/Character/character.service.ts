@@ -1,7 +1,8 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IGetCharacterResponse } from '../@types/character.interface';
+
 import { Observable } from 'rxjs';
+import { IGetCharacterResponse } from '../../../@types/character.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +19,7 @@ export class CharacterService {
   getCharacterByName({
     name,
   }: {
-    name: string | null;
+    name: string;
   }): Observable<IGetCharacterResponse> {
     return this.http.get<IGetCharacterResponse>(
       `${this.API_URL}/?name=${name}`

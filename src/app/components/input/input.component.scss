@@ -1,6 +1,7 @@
-@import "../../../../color.verbals.scss";
+@import "../../../color.verbals.scss";
 
-.input-form{
+.input-form {
+  flex: 1;
   width: 19.875rem;
   height: 3rem;
   border: 1px solid $border;
@@ -9,7 +10,13 @@
   background-color: transparent;
   border-radius: 12px;
 
-  &:focus{
+  &:focus {
     outline: none;
+  }
+}
+
+@media (max-width: 471px) {
+  .input-form {
+    max-width: 14rem;
   }
 }
