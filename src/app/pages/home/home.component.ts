@@ -1,7 +1,7 @@
 import { Component, OnInit, WritableSignal, signal } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { catchError, debounceTime, switchMap } from 'rxjs/operators';
-import { NgFor, NgIf } from '@angular/common';
+import { CommonModule, NgFor, NgIf } from '@angular/common';
 
 import {
   ICharacter,
@@ -12,7 +12,7 @@ import { CardComponent } from '../../components/card/card.component';
 import { InputComponent } from '../../components/input/input.component';
 import { NotFoundComponent } from '../../components/not-found/not-found.component';
 import { TitleComponent } from '../../components/title/title.component';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -22,6 +22,7 @@ import { Observable } from 'rxjs';
     InputComponent,
     NotFoundComponent,
     CardComponent,
+    CommonModule,
     NgIf,
     NgFor,
   ],
@@ -29,7 +30,7 @@ import { Observable } from 'rxjs';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
-  characterList: ICharacter[] = [];
+  characterList$: Observable<ICharacter[]> = new Observable<ICharacter[]>();
   search: FormControl = new FormControl('');
   loading: WritableSignal<boolean> = signal(false);
 
@@ -39,22 +40,25 @@ export class HomeComponent implements OnInit {
 
   getCharacterList(): void {
     this.loading.set(true);
-    this.characterService.getCharacters().subscribe({
-      error: (err) => {
-        this.characterList = [];
+    this.characterList$ = this.characterService.getCharacters().pipe(
+      catchError((err: Error) => {
         console.error(err);
-      },
-      next: (res) => {
-        this.characterList = res.results;
-      },
-      complete: () => this.loading.set(false),
-    });
+        this.loading.set(false);
+        return of();
+      })
+    );
+    this.loading.set(false);
   }
 
-  handleGetCharacterByName(name: string): Observable<IGetCharacterResponse> {
+  handleGetCharacterByName({
+    name,
+  }: {
+    name: string;
+  }): Observable<IGetCharacterResponse> {
     return this.characterService.getCharacterByName({ name: name }).pipe(
-      catchError(() => {
-        return (this.characterList = []);
+      catchError((err: Error) => {
+        console.error(err);
+        return (this.characterList$ = of());
       })
     );
   }
@@ -63,11 +67,13 @@ export class HomeComponent implements OnInit {
     this.search.valueChanges
       .pipe(
         debounceTime(1000),
-        switchMap((value: string) => this.handleGetCharacterByName(value))
+        switchMap((value: string) =>
+          this.handleGetCharacterByName({ name: value })
+        )
       )
       .subscribe({
         next: (res) => {
-          this.characterList = res.results;
+          this.characterList$ = of(res.results);
         },
       });
   }
