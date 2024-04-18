@@ -2,17 +2,17 @@ import { Component, OnInit, WritableSignal, signal } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { catchError, debounceTime, switchMap } from 'rxjs/operators';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
+import { Observable, of } from 'rxjs';
 
 import {
   ICharacter,
   IGetCharacterResponse,
-} from '../../@types/character.interface';
-import { CharacterService } from '../../core/services/Character/character.service';
-import { CardComponent } from '../../components/card/card.component';
-import { InputComponent } from '../../components/input/input.component';
-import { NotFoundComponent } from '../../components/not-found/not-found.component';
-import { TitleComponent } from '../../components/title/title.component';
-import { Observable, of } from 'rxjs';
+} from '@interfaces/character.interface';
+import { CharacterService } from '@core/services/Character/character.service';
+import { CardComponent } from '@components/card/card.component';
+import { InputComponent } from '@components/input/input.component';
+import { NotFoundComponent } from '@components/not-found/not-found.component';
+import { TitleComponent } from '@components/title/title.component';
 
 @Component({
   selector: 'app-home',

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { ICharacter } from '../../@types/character.interface';
-import { CardComponent } from '../../components/card/card.component';
-import { NotFoundComponent } from '../../components/not-found/not-found.component';
-import { TitleComponent } from '../../components/title/title.component';
+import { Component } from '@angular/core';
 import { CommonModule, NgForOf, NgIf } from '@angular/common';
-import { FavoriteService } from '../../core/services/Favorite/favorite.service';
+
+import { ICharacter } from '@interfaces/character.interface';
+import { CardComponent } from '@components/card/card.component';
+import { NotFoundComponent } from '@components/not-found/not-found.component';
+import { TitleComponent } from '@components/title/title.component';
+import { FavoriteService } from '@core/services/Favorite/favorite.service';
 import { Observable } from 'rxjs';
 
 @Component({
