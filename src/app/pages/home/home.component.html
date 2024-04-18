@@ -7,7 +7,7 @@
 
   <div class="not-found-section">
     <app-not-found
-      *ngIf="characterList.length === 0"
+      *ngIf="!(characterList$ | async)?.length"
       title="Nada foi encontrado"
       description="Tente realizar uma nova busca"
     ></app-not-found>
@@ -15,7 +15,7 @@
 
   <div class="character-section">
     <app-card
-      *ngFor="let character of characterList; let i = index"
+      *ngFor="let character of characterList$ |async"
       [character]="character"
     ></app-card>
   </div>
