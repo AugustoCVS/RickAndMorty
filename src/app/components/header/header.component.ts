@@ -12,7 +12,7 @@ import { NavigateUtils } from '../../core/utils/navigate.utils';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  @Input() badgeNumber: number = 0;
+  @Input() badgeNumber: number | undefined = 0;
 
   faHeart = faHeart;
   faHouse = faHouse;
