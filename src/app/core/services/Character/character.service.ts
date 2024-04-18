@@ -1,19 +1,31 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Observable } from 'rxjs';
-import { IGetCharacterResponse } from '../../../@types/character.interface';
+import { BehaviorSubject, Observable } from 'rxjs';
+import {
+  ICharacter,
+  IGetCharacterResponse,
+} from '../../../@types/character.interface';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CharacterService {
-  private readonly API_URL = 'https://rickandmortyapi.com/api/character';
+  
+  private API_URL = environment.api;
 
-  constructor(private http: HttpClient) {}
+  private characterListSubject: BehaviorSubject<ICharacter[]> = new BehaviorSubject<ICharacter[]>([]);
+  private characterList$: Observable<ICharacter[]> = this.characterListSubject.asObservable();
 
-  getCharacters(): Observable<IGetCharacterResponse>{
-    return this.http.get<IGetCharacterResponse>(this.API_URL);
+  constructor(private httpClient: HttpClient) {
+    this.httpClient.get<IGetCharacterResponse>(this.API_URL).subscribe(res => {
+      this.characterListSubject.next(res.results);
+    })
+  }
+
+  getCharacters(): Observable<ICharacter[]> {
+    return this.characterList$;
   }
 
   getCharacterByName({
@@ -21,8 +33,7 @@ export class CharacterService {
   }: {
     name: string;
   }): Observable<IGetCharacterResponse> {
-    return this.http.get<IGetCharacterResponse>(
-      `${this.API_URL}/?name=${name}`
-    );
+    const params = new HttpParams().set('name', name);
+    return this.httpClient.get<IGetCharacterResponse>(this.API_URL, { params });
   }
 }
