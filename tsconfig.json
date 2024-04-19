@@ -41,6 +41,9 @@
       ],
       "@colors": [
         "src/color.verbals.scss"
+      ],
+      "@environment": [
+        "src/environments/environment"
       ]
     }
   },

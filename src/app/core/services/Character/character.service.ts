@@ -5,8 +5,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import {
   ICharacter,
   IGetCharacterResponse,
-} from '../../../@types/character.interface';
-import { environment } from '../../../../environments/environment';
+} from '@interfaces/character.interface';
+import { environment } from '@environment';
 
 @Injectable({
   providedIn: 'root',
