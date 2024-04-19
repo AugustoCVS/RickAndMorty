@@ -1,4 +1,8 @@
-<div class="card-container">
+<div class="skeleton-container" *ngIf="loading"></div>
+
+<div class="card-container"
+*ngIf="!loading"
+>
   <fa-icon
     [icon]="renderTheIconBasedOnFavorite()"
     [ngClass]="{ active: isIconActive() }"

@@ -1,5 +1,5 @@
-import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { CommonModule, NgIf, NgOptimizedImage } from '@angular/common';
+import { Component, Input, WritableSignal, signal } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 import {
@@ -16,12 +16,13 @@ import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [FontAwesomeModule, NgOptimizedImage, CommonModule, MatButtonModule],
+  imports: [FontAwesomeModule, NgOptimizedImage, CommonModule, MatButtonModule, NgIf],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
 })
 export class CardComponent {
   @Input() character!: ICharacter;
+  @Input() loading: boolean = false;
 
   isExpanded: boolean = false;
   solidHeart = solidHeart;
