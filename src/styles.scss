@@ -1,3 +1,7 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
 @import "https://fonts.googleapis.com/css2?family=Creepster&family=Poppins:wght@400;600;700&family=Roboto:wght@400;700;900&display=swap";
 @import "@colors";
 
@@ -8,16 +12,14 @@
 }
 
 ::-webkit-scrollbar {
-  width: 8px; 
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: $core-background; 
+  background: $core-background;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $border; 
+  background: $border;
   border-radius: 12px;
 }
-
-
