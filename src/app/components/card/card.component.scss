@@ -1,5 +1,12 @@
 @import "@colors";
 
+.skeleton-container{
+  width: 14rem;
+  height: 18.625rem;
+  background-color: $border;
+  border-radius: 0.75rem;
+}
+
 .card-container {
   position: relative;
   width: 100%;
@@ -16,6 +23,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: 0.75rem 0.75rem 0 0;
+    cursor: pointer;
   }
 }
 
