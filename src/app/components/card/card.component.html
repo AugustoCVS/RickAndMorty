@@ -1,12 +1,19 @@
 <div class="card-container">
   <fa-icon
     [icon]="renderTheIconBasedOnFavorite()"
-    [ngClass]="{ active: isIconActive()}"
+    [ngClass]="{ active: isIconActive() }"
     class="favorite-icon"
     (click)="toggleFavorite()"
   ></fa-icon>
 
-  <img ngSrc="{{ character.image }}" width="224" height="224" class="character-img" />
+  <img
+    ngSrc="{{ character.image }}"
+    width="224"
+    height="224"
+    class="character-img"
+    mat-button
+    (click)="openDialog()"
+  />
   <div class="description">
     <h3 [class.expanded]="isExpanded" (click)="toggleNumberOfLines()">
       {{ character.name }}
