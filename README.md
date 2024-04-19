@@ -1,3 +1,5 @@
+## Contexto da aplicação
+
 Aplicação de consulta, visualização e cadastro de personagens favoritos do seriado Rick & Morty.
 
 ## Tecnologias utilizadas
