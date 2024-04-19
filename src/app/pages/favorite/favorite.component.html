@@ -5,7 +5,7 @@
 
   <div class="not-found-section">
     <app-not-found
-      *ngIf="favoritesCharacters.length === 0"
+      *ngIf="!(favoritesCharacters$ | async)?.length"
       title="Parece que você ainda não tem favoritos"
       description="Volte à página inicial e escolha os melhores para você"
       [shouldShowButton]=true
@@ -15,7 +15,7 @@
 
   <div class="character-section">
     <app-card
-      *ngFor="let character of favoritesCharacters; let i = index"
+      *ngFor="let character of favoritesCharacters$ | async"
       [character]="character"
     ></app-card>
   </div>

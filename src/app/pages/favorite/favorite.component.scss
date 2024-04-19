@@ -1,4 +1,4 @@
-@import "../../../color.verbals.scss";
+@import "@colors";
 
 .favorite-container {
   background-color: $core-background;
@@ -18,7 +18,9 @@
   width: 100%;
   max-width: 46.5rem;
   padding: 0 1.5rem;
-  align-items: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .not-found-section {
@@ -36,9 +38,9 @@
   gap: 1.5rem;
 }
 
-@media (min-width: 486px) {
-  .search-section {
-    gap: 0;
-    flex-direction: row;
+@media (min-width: 500px) {
+  .title-section {
+    align-items: start;
+    justify-content: start;
   }
 }

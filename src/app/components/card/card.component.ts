@@ -1,10 +1,11 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 import { IconDefinition, faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
-import { ICharacter } from '../../@types/character.interface';
-import { FavoriteService } from '../../core/services/Favorite/favorite.service';
+
+import { ICharacter } from '@interfaces/character.interface';
+import { FavoriteService } from '@core/services/Favorite/favorite.service';
 
 @Component({
   selector: 'app-card',
