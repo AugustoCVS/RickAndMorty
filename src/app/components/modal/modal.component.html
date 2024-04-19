@@ -1,0 +1,18 @@
+<div class="modal-container">
+  <h2 mat-dialog-title class="modal-title">{{ data.name }}</h2>
+  <mat-dialog-content class="modal-content">
+    <img
+      ngSrc="{{ data.image }}"
+      width="224"
+      height="224"
+      class="character-img"
+      priority
+    />
+    <div class="description">
+      <div class="description-line" *ngFor="let info of characterInfo">
+        <p class="info-title">{{ info.title }}</p>
+        <p class="info-value">{{ info.value }}</p>
+      </div>
+    </div>
+  </mat-dialog-content>
+</div>

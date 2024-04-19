@@ -17,6 +17,7 @@
     <app-card
       *ngFor="let character of characterList$ |async"
       [character]="character"
+      [loading]="loading()"
     ></app-card>
   </div>
 </section>
