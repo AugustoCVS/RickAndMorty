@@ -1,6 +1,13 @@
 Aplicação de consulta, visualização e cadastro de personagens favoritos do seriado Rick & Morty.
 
-## Diferenciais aplicados que estão fora do escopo pedido: 
+## Tecnologias utilizadas
+- Angular 17
+- Typescript
+- RxJs
+- Angular Material
+- Font Awesome icons 
+
+## Diferenciais aplicados que estão fora do escopo pedido 
 
 - Somente uma parte do nome do personagem é apresentado caso seja maior que uma linha, ao clicar no mesmo, o nome expande e é apresentado por inteiro
 
