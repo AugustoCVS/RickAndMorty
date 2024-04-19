@@ -77,6 +77,10 @@
   font-weight: 700;
 }
 
+.logo{
+  cursor: pointer;
+}
+
 @media (min-width: 500px) {
   .header-container {
     flex-direction: row;

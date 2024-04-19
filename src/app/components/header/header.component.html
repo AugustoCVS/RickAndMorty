@@ -1,5 +1,9 @@
 <header class="header-container">
-  <img ngSrc="assets/images/svg/logo.svg" alt="Logo" width="114" height="64" priority />
+  <img ngSrc="assets/images/svg/logo.svg" alt="Logo" width="114" height="64" priority 
+  class="logo"
+  (click)="this.navigate.handleNavigate({
+    screen: '/',
+  })" />
 
   <div class="toggle-container">
     <div
